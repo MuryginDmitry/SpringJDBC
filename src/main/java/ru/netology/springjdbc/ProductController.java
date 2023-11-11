@@ -14,6 +14,15 @@ public class ProductController {
         this.productRepository = productRepository;
     }
 
+    @GetMapping("/hi")
+    public String hi() {
+        return "Hi";
+    }
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello, authenticated user";
+    }
+
     @GetMapping("/products/fetch-product")
     public String fetchProductByName(@RequestParam String name) {
         String productName = productRepository.getProductName(name);
